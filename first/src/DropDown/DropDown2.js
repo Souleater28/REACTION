@@ -10,7 +10,7 @@ class Drop2 extends React.Component {
   render() {
     return (
       <>
-        <h2 style={{ color: "green" }} onClick={this.toggleDropDown}>
+        <h2 className="green" onClick={this.toggleDropDown}>
           -Fuck this shit I'm OUT
         </h2>
         {this.state.isOpen && (

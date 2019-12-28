@@ -2,8 +2,8 @@ import React from "react";
 import Helloworld from "./HelloWorld";
 import ImageSoul from "./ImageSoul";
 import "./style.css";
-import DropDown from "./DropDown";
-import Count from "./Counter";
+import DropDown from "./DropDown/DropDown";
+import CounterList from "./CounterList/CounterListContainer";
 function App() {
   return (
     <>
@@ -12,7 +12,7 @@ function App() {
         <ImageSoul />
       </div>
       <DropDown />
-      <Count />
+      <CounterList />
     </>
   );
 }
