@@ -3,19 +3,25 @@ import CounterListView from "./CounterListView";
 
 class CounterList extends React.Component {
   state = {
+    boolshit: null,
     amount: 0
   };
-  statepl = () => {
+  amountpl = () => {
     this.setState({ amount: this.state.amount + 1 });
+    this.setState({ boolshit: true });
   };
-  statemn = () => {
-    this.setState({ amount: this.state.amount - 1 });
+  amountmn = () => {
+    if (this.state.amount !== 0) {
+      this.setState({ amount: this.state.amount - 1 });
+      this.setState({ boolshit: false });
+    }
   };
   render() {
     return (
       <CounterListView
-        statepl={this.statepl}
-        statemn={this.statemn}
+        boolshit={this.state.boolshit}
+        amountpl={this.amountpl}
+        amountmn={this.amountmn}
         amount={this.state.amount}
       />
     );

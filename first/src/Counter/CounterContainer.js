@@ -1,22 +1,53 @@
 import React from "react";
 import Counter from "./Counter";
-class Count extends React.Component {
+class Count extends React.PureComponent {
+  componentDidMount() {
+    console.log("%c%s", "color: green; font: 1.2rem/1 Tahoma;", "FUCK OFF");
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.boolshit) {
+      if (this.state.count % 2 === 0)
+        this.setState({
+          count: this.state.count - 1
+        });
+    }
+    if (!nextProps.boolshit) {
+      if (this.state.count % 2 === 1 || this.state.count % 2 === -1)
+        this.setState({
+          count: this.state.count + 1
+        });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    // if (prevState.count === this.state.count) {
+    //   this.setState({
+    //     count: this.state.count
+    //   });
+    // }
+    // if (prevState.count === this.state.count) {
+    //   this.setState({
+    //     count: this.state.count
+    //   });
+    // }
+  }
   state = {
-    times: 0,
+    count: 0,
     isOpen: false
   };
-  statepl = () => {
-    this.setState({ times: this.state.times + 1 });
+  countpl = () => {
+    this.setState({ count: this.state.count + 1 });
   };
-  statemn = () => {
-    this.setState({ times: this.state.times - 1 });
+  countmn = () => {
+    this.setState({ count: this.state.count - 1 });
   };
   render() {
     return (
       <Counter
-        statepl={this.statepl}
-        statemn={this.statemn}
-        times={this.state.times}
+        countpl={this.countpl}
+        countmn={this.countmn}
+        count={this.state.count}
       />
     );
   }
