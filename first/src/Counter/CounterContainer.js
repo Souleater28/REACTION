@@ -20,18 +20,6 @@ class Count extends React.PureComponent {
     }
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    // if (prevState.count === this.state.count) {
-    //   this.setState({
-    //     count: this.state.count
-    //   });
-    // }
-    // if (prevState.count === this.state.count) {
-    //   this.setState({
-    //     count: this.state.count
-    //   });
-    // }
-  }
   state = {
     count: 0,
     isOpen: false
