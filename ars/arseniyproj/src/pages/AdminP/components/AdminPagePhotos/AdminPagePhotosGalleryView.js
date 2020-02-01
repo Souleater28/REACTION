@@ -18,13 +18,13 @@ const useStyles = makeStyles(theme => ({
 
 const AdminPageClientListView = props => {
   const classes = useStyles();
-
+  console.log(props.photos);
   return (
     <div className={classes.root}>
-      <GridList cellHeight={160} className={classes.gridList} cols={3}>
-        {props.pht.slice(0, 200).map(pht => (
-          <GridListTile key={pht.url} cols={pht.cols || 1}>
-            <img src={pht.url} alt={pht.title} />
+      <GridList cellHeight={160} className={classes.gridList} cols={5}>
+        {props.photos.slice(0, 200).map(photo => (
+          <GridListTile key={photo.previewURL} cols={1}>
+            <img src={photo.previewURL} alt={photo.title} />
           </GridListTile>
         ))}
       </GridList>
