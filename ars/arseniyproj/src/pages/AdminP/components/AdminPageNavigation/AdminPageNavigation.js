@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 import AppBar from "@material-ui/core/AppBar";
+
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
@@ -12,6 +13,8 @@ import { findByLabelText } from "@testing-library/react";
 import AdminPageClientListContainer from "../../containers/AdminPageClientListContainer";
 import Box from "@material-ui/core/Box";
 import AdminPagePhotosGalleryContainer from "../AdminPagePhotos/AdminPagePhotosGalleryContainer";
+import EventCardListContainer from "../AdminPageClientList/EventCards/EventCardListContainer";
+
 const useStyles = makeStyles(theme => ({
   appbarMenu: {
     display: "flex",
@@ -63,6 +66,9 @@ const AdminPageNavigation = ({ value, handleChange }) => {
       </AppBar>
       <TabPanel value={value} index={0}>
         <AdminPageClientListContainer />
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+        <EventCardListContainer />
       </TabPanel>
       <TabPanel value={value} index={4}>
         <AdminPagePhotosGalleryContainer />
