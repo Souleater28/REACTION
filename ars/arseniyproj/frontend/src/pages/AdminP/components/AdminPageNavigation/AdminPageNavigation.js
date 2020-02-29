@@ -53,6 +53,10 @@ const AdminPageNavigation = ({ value, handleChange }) => {
           <Typography component="span">
             <FormatAlignLeftIcon /> Menu
           </Typography>
+
+          <Button className={classes.button}>
+            <Link to="/login">Log IN </Link>
+          </Button>
         </div>
         <Tabs value={value} onChange={handleChange}>
           <Tab value={0} label="Common clients" />
