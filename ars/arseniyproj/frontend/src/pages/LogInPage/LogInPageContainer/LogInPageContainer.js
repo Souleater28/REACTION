@@ -1,22 +1,46 @@
 import React from "react";
 import LogInPageView from "../LogInPageView/LogInPageView";
+import { withRouter } from "react-router";
+import fetchRequest from "../../../utils/fetchRequest";
+
 class LogInPageContainer extends React.Component {
   state = {
-    error_user: 0,
-    error_password: 0,
-    user: " ",
-    password: " "
+    rows: [],
+    error: false,
+    user: {
+      username: "",
+      password: ""
+    }
   };
 
   handleUsernameChange = value => {
-    this.setState({ user: value });
+    this.setState({ user: { ...this.state.user, username: value } });
   };
+
   handlePasswordChange = value => {
-    this.setState({ password: value });
+    this.setState({ user: { ...this.state.user, password: value } });
   };
-  handleSubmit = event => {
-    alert(`USERNAME ${this.state.user} PASSWORD ${this.state.password}`);
+
+  handleSubmit = async event => {
+    event.preventDefault();
+
+    try {
+      let response = await fetchRequest(
+        "http://localhost:3000/login",
+        {
+          "Content-Type": "application/json"
+        },
+        this.state.user,
+        "POST"
+      );
+      if (response.user.role) {
+        this.props.history.push(`/${response.user.role}`);
+      }
+    } catch (err) {
+      alert(err.error);
+    }
   };
+
   render() {
     const props = {
       handlePasswordChange: this.handlePasswordChange,
@@ -27,4 +51,4 @@ class LogInPageContainer extends React.Component {
   }
 }
 
-export default LogInPageContainer;
+export default withRouter(LogInPageContainer);

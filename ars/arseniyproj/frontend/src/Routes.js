@@ -8,8 +8,8 @@ import UserPageContainer from "./pages/UserPage/UserPageContainer";
 
 export default () => {
   return (
-    <Switch exact path="/User">
-      <Route>
+    <Switch>
+      <Route exact path="/User">
         <UserPageContainer />
       </Route>
       <Route exact path="/Admin">

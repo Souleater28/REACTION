@@ -41,8 +41,7 @@ const LogInView = props => {
     handlePasswordChange,
     handleUsernameChange,
     handleSubmit,
-    error_user,
-    error_password
+    error
   } = props;
   const classes = useStyles();
 
@@ -58,7 +57,7 @@ const LogInView = props => {
             type="text"
             autoComplete="current-user"
             variant="filled"
-            helperText={error_user ? "invalid user" : null}
+            helperText={error ? "invalid user" : null}
           />
 
           <TextField
@@ -68,10 +67,10 @@ const LogInView = props => {
             type="password"
             autoComplete="current-password"
             variant="filled"
-            helperText={error_password ? "invalid password" : null}
+            helperText={error ? "invalid password" : null}
           />
           <Button type="submit" className={classes.button}>
-            {/* <Link to="/admin">*/}Submit {/* </Link> */}
+            Submit
           </Button>
         </form>
       </CardContent>
