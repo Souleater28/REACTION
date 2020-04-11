@@ -1,12 +1,12 @@
-const userMapper = user => {
+const userMapper = (user) => {
   const { username, role } = user;
 
   return {
     username,
-    role
+    role,
   };
 };
 
 module.exports = {
-  userMapper
+  userMapper,
 };

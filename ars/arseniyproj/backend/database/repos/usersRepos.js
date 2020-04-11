@@ -1,12 +1,12 @@
 const User = require("../models/usersModel");
 
-const getUserByEmail = reqEmail => User.findOne({ email: reqEmail });
+const getUserByEmail = (reqEmail) => User.findOne({ email: reqEmail });
 
-const getUserById = id => User.findById(id);
+const getUserById = (id) => User.findById(id);
 
-const addUser = user => User({ ...user }).save();
+const addUser = (user) => User({ ...user }).save();
 module.exports = {
   getUserByEmail,
   getUserById,
-  addUser
+  addUser,
 };

@@ -5,23 +5,23 @@ const userSchema = mongoose.Schema(
       type: String,
       required: true,
       minLength: 3,
-      maxLength: 100
+      maxLength: 100,
     },
 
     password: {
       type: String,
-      required: true
+      required: true,
     },
 
     role: {
       required: true,
-      type: String
+      type: String,
     },
 
     banned: {
       type: Boolean,
-      required: true
-    }
+      required: true,
+    },
   },
   { collection: "users" }
 );

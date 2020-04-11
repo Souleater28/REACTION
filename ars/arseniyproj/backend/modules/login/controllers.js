@@ -3,7 +3,7 @@ const { userMapper } = require("./mappers");
 
 const loginController = (req, res, next) => {
   const user = config.users.find(
-    user =>
+    (user) =>
       user.username === req.body.username && user.password === req.body.password
   );
 
@@ -12,5 +12,5 @@ const loginController = (req, res, next) => {
 };
 
 module.exports = {
-  loginController
+  loginController,
 };

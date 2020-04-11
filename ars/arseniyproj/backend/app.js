@@ -18,6 +18,6 @@ mongoose
   )
   .then(() => console.log("DB CONNECTED"));
 
-const server = app.listen(3000, function() {
+const server = app.listen(3000, function () {
   console.log("Node server is running on port 3000");
 });

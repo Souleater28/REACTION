@@ -15,17 +15,17 @@ import Box from "@material-ui/core/Box";
 import AdminPagePhotosGalleryContainer from "../AdminPagePhotos/AdminPagePhotosGalleryContainer";
 import EventCardListContainer from "../AdminPageClientList/EventCards/EventCardListContainer";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   appbarMenu: {
     display: "flex",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
   },
   button: {
     width: "70px",
     height: "25px",
     backgroundColor: "MediumAquaMarine",
-    fontSize: "12px"
-  }
+    fontSize: "12px",
+  },
 }));
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
